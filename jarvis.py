@@ -3,6 +3,11 @@ import requests
 import json
 import apis
 
+# Fix Python 2.x. Yingchong Qiu + Mudit Mittal
+try: 
+    input = raw_input
+except NameError: 
+    pass
 def square(n):
     """ Square numbers  
 
@@ -33,7 +38,6 @@ def dispatcher(command, arg):
 
 def prompter():
     """ asks for things """
-
     command = input("How may I help you?: [weather, square, go away, bye]")
     if command == "weather":
         city = input("Sure thing! What city?")
